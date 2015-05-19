@@ -4,7 +4,7 @@
  * then set it's value to null;
  *
  */
-
+var unicorn = null;
 
 /* Step 2
  *
@@ -12,7 +12,7 @@
  * then assign it to be the value of "Atari"
  *
  */
-
+var videogame_system = "Atari";
 
 /* Step 3
  *
@@ -20,7 +20,7 @@
  * and assign the value of sahara_animal to "The Addax"
  *
  */
-
+var sahara_animal = "The Addax";
 
 /* Step 4
  *
@@ -30,7 +30,7 @@
  * Capitalize the names.
  */
 
-
+var planets = ['Mercury', 'Venus', 'Earth', 'Mars', 'Jupiter', 'Saturn', 'Uranus', 'Neptune'];
 /* Step 5
  *
  * Declare a variable named "galilean_moons"
@@ -38,7 +38,7 @@
  * each galilean moon of Jupiter
  *
  */
-
+var galilean_moons = [ 'Io', 'Europa', 'Ganymede', 'Callisto'];
 
 /* Step 6 φ
  *
@@ -46,7 +46,7 @@
  * and assign the value of golden_ratio to 1.61803398874
  *
  */
-
+var golden_ratio = 1.61803398874;
 
 /* Step 7
  *
@@ -54,7 +54,7 @@
  * and assign the value of earths_water_composition to 0.71
  *
  */
-
+var earths_water_composition = 0.71;
 
 /* Step 8
  *
@@ -62,7 +62,7 @@
  * and assign the value of club_name to "Fight Club"
  *
  */
-
+var club_name = "Fight Club";
 
 /* Step 9
  *
@@ -73,7 +73,11 @@
  *   male    => "male"
  *   unknown => undefined
  */
-
+var gender = {
+  female: 'female',
+  male: 'male',
+  unknown: undefined
+};
 
 /* Step 10
  *
@@ -87,6 +91,12 @@
  *   gender  => gender.female
  *
  */
+var princess_leia = {
+  name: 'Leia Organa',
+  money: 890,
+  age: 20,
+  gender: gender.female
+};
 
 
 /* Step 11
@@ -100,6 +110,12 @@
  *   jsonformatter.curiousconcept.com => "104.28.5.70"
  *
  */
+var domains = {
+  "ycombinator.com": "198.41.190.47",
+  "laughingsquid.com": "162.159.247.97",
+  "slumlordhosting.com" :"198.61.179.126",
+  "jsonformatter.curiousconcept.com": "104.28.5.70"
+};
 
 
 /* Step 12
@@ -115,7 +131,14 @@
  *   Konqueror  => "konqueror.org"
  *
  */
-
+var browsers = {
+  Chromium: "google.com",
+  Safari: "apple.com",
+  Opera: "opera.com",
+  Firefox: "mozilla.org",
+  Sleipnir: "fenrir-inc.com",
+  Konqueror: "konqueror.org"
+}
 
 /* Step 13
  *
@@ -133,7 +156,19 @@
  *  isDouble  => true
  *
  */
+var rainbow  = {
+  colors: {
+    red : "#F0280A",
+    orange: "#FF8800",
+    yellow: "#FFDD00",
+    green: "#51AB0C",
+    blue: "#1593ED",
+    indigo: "#5215ED",
+    violet: "#A915ED",
+  },
+  isDouble: true
 
+}
 
 /* Step 14
  *
@@ -148,7 +183,7 @@
  * "Bieber Linux"
  *
  */
-
+var linuxFlavors = ["Gentoo", "Fedora", "Debian", "Slackware", "Red Hat", "Bieber Linux"];
 
 /* Step 15
  *
@@ -162,7 +197,7 @@
  * "cytosine"
  *
  */
-
+var DNA = ["nucleatides", "guanine", "adenine", "thymine", "cytosine"];
 
 /* Step 16
  *
@@ -175,7 +210,12 @@
  * Surface      => 320
  *
  */
-
+var laptopCosts = {
+  MacBook: 1500,
+  Alienware: 2500,
+  HP: 499,
+  Surface: 320
+};
 
 /* Step 17
  *
@@ -191,7 +231,15 @@
  * "Species"
  *
  */
-
+var livingOrganismClassification = [
+  "Kingdom",
+  "Phylum",
+  "Class",
+  "Order",
+  "Family",
+  "Genus",
+  "Species"
+];
 
 /* Step 18
  *
@@ -205,7 +253,13 @@
  * "cvs"
  *
  */
-
+var scmList = [
+"git",
+"svn",
+"mercurial",
+"bazaar",
+"cvs"
+];
 
 /* Step 19
  *
@@ -224,7 +278,14 @@
  *                  "Golden"
  *
  */
-
+var beers = {
+  IPA: "Ale",
+  Lager: "Strong",
+  Heffeweisen: "German",
+  Stout: ["Thick", "Dark"],
+  Porter: "Bitter",
+  Ale: ["Light", "Golden"]
+};
 
 /* Step 20
  *
@@ -234,7 +295,9 @@
  * @return {String}
  *
  */
-
+function sahara_river(){
+  return 'Nile River';
+}
 
 /* Step 21
  *
@@ -246,7 +309,9 @@
  * @return {Number}
  *
  */
-
+function addNumbers(x, y){
+  return x + y;
+}
 
 /* Step 22
  *
@@ -259,7 +324,12 @@
  * @return {Bool}
  *
  */
-
+function installLinux(type){
+  if(linuxFlavors.indexOf(type) !== -1){
+    return true;
+  };
+  return false;
+}
 
 /* Step 23
  *
@@ -278,7 +348,18 @@
  * @return {Bool when False, String when True}
  *
  */
-
+function drink(type){
+  if(beers[type] === undefined){
+    return false;
+  }
+  if (typeof beers[type] === "string"){
+    return "This " + type + " is " + beers[type] + ".";
+  }
+   if (typeof beers[type] === "object"){
+    return "This " + type + " is " + beers[type].join(" and ") + ".";
+  }
+  return true;
+}
 
 /* Step 24
  *
@@ -291,7 +372,12 @@
  * @return {String if true else return false}
  *
  */
-
+function browseURL(x){
+  if(browsers[x] === undefined){
+    return false;
+  }
+  return browsers[x];
+}
 
 /* Step 25
  *
@@ -302,7 +388,9 @@
  * @return {String}
  *
  */
-
+function listLivingOrgClass(){
+  return '<ul><li>' + livingOrganismClassification.join('</li><li>') + '</li></ul>';
+}
 
 /* Step 26
  *
@@ -323,7 +411,12 @@
  * @return {String}
  *
  */
-
+function favoritePlanet(x){
+  if(planets.indexOf(x) === -1){
+    return x + ' is not a planet!';
+  }
+  return "I'm from " + x + ", but I wish I could go to " + planets[Math.floor(Math.random()*planets.length)];
+}
 
 /* Step 27
  *
@@ -347,6 +440,24 @@
  *   earnMoney
  *
  */
+function Person(name, money, age, gender){
+  this.name = name;
+  this.money = money;
+  this.age = age;
+  this.gender = gender;
+  // this.spendMoney = function(x){
+  //   this.money = this.money - x;
+  // };
+  // this.earnMoney = function(x){
+  //   this.money = this.money + x;
+  // };
+}
+Person.prototype.spendMoney = function(x) {
+  this.money -= x;
+};
+Person.prototype.earnMoney = function(x) {
+  this.money += x;
+};
 
 
 /* Step 28
@@ -360,7 +471,12 @@
  * @return {String}
  *
  */
-
+function purchaseLaptop(laptop){
+  if(laptopCosts[laptop] === undefined){
+    return -1;
+  }
+  return laptopCosts[laptop].toString();
+}
 
 /* Step 29
  *
@@ -373,7 +489,12 @@
  * @return {Bool}
  *
  */
-
+function canTalkAbout(club){
+  if(club === club_name){
+    return false;
+  }
+  return true;
+}
 
 /* Step 30
  *
@@ -395,7 +516,13 @@
  *   write
  *
  */
+function Pen(color){
+  this.color = color;
+}
 
+Pen.prototype.write = function(message) {
+  return this.color + ": " + message;
+};
 
 /* Step 31
  *
@@ -423,7 +550,21 @@
  *   grow
  *
  */
+function Garden(plantsTotal){
+  this.plantsTotal = plantsTotal;
+  this.isWatered = false;
+}
 
+Garden.prototype.water = function() {
+  this.isWatered = true;
+};
+Garden.prototype.grow = function() {
+  if(this.isWatered === true){
+      this.plantsTotal++;
+      this.isWatered = false;
+    }
+    return false;
+};
 
 /* Step 32
  *
@@ -441,7 +582,15 @@
  *   removePlanet
  *
  */
-
+function SolarSystem(){
+  this.planets = [];
+}
+SolarSystem.prototype.addPlanet = function(x) {
+  this.planets.push(x);
+};
+SolarSystem.prototype.removePlanet = function(x) {
+  this.planets.splice(this.planets.indexOf(x), 1);
+};
 
 /* Step 33
  *
@@ -475,7 +624,31 @@
  *   marries
  *
  */
+function PrincessLeia(name, money, age, gender){
+  Person.call(this, name, money, age, gender);
+  this.isInTrouble = null;
+};
 
+PrincessLeia.prototype = Object.create(Person.prototype);
+
+PrincessLeia.prototype.shootsGun = function() {
+  this.isInTrouble = false;
+  return "Leia shoots her gun wildly";
+};
+
+PrincessLeia.prototype.getsInTrouble = function() {
+  this.isInTrouble = true;
+    return "Help me Obi-wan Kenobi, you're my only hope";
+};
+PrincessLeia.prototype.marries = function(x) {
+  if(x === 'Han Solo'){
+      return true;
+    }
+    if(x === 'Luke Skywalker'){
+      return 'Gross!';
+    }
+    return false;
+};
 
 /* Step 34
  *
@@ -494,7 +667,17 @@
  *   staplePapers
  *
  */
+function Stapler(color, maxPapers){
+  this.color = color;
+  this.maxPapers = maxPapers;
+}
 
+Stapler.prototype.staplePapers = function(numPapers) {
+   if(numPapers <= this.maxPapers){
+      return true;
+    }
+    return false;
+};
 
 /* Step 35
  *
@@ -534,8 +717,38 @@
  *   addDiscovery
  *
  */
+function Scientist(name, money, age, gender){
+  Person.call(this, name, money, age, gender);
+  this.disciplines = [];
+  this.discoveries = [];
+}
 
+Scientist.prototype = Object.create(Person.prototype);
 
+Scientist.prototype.addDiscipline = function(x) {
+  this.disciplines.push(x);
+    return this.displines;
+};
+
+Scientist.prototype.checkDiscipline = function(x) {
+  if(this.disciplines.indexOf(x) === -1){
+      return false;
+    }
+    return true;
+};
+
+// Scientist.prototype.addDiscovery = function(x) {
+//   this.discoveries.push(x);
+//   if(this.discoveries.length === 1){
+//     return "I discovered " + this.discoveries + ".";
+//   }
+//   if(this.discoveries.length === 2){
+//     return "I discovered " this.discoveries.join(" and ") + ".";
+//   }
+//   if(this.discoveries.length >= 3){
+//     return
+//   }
+// };
 /* Step 36
  *
  * Define a class named "BankAccount" that has properties
