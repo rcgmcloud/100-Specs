@@ -737,18 +737,20 @@ Scientist.prototype.checkDiscipline = function(x) {
     return true;
 };
 
-// Scientist.prototype.addDiscovery = function(x) {
-//   this.discoveries.push(x);
-//   if(this.discoveries.length === 1){
-//     return "I discovered " + this.discoveries + ".";
-//   }
-//   if(this.discoveries.length === 2){
-//     return "I discovered " this.discoveries.join(" and ") + ".";
-//   }
-//   if(this.discoveries.length >= 3){
-//     return
-//   }
-// };
+Scientist.prototype.addDiscovery = function(x) {
+  this.discoveries.push(x);
+  if(this.discoveries.length === 1){
+    return "I discovered " + this.discoveries + ".";
+  }
+  if(this.discoveries.length === 2){
+    return "I discovered " + this.discoveries.join(" and ") + ".";
+  }
+  if(this.discoveries.length >= 3){
+    return "I discovered " + this.discoveries.slice(0,this.discoveries.length-1).join(", ") + ", and " + this.discoveries[this.discoveries.length -1] + ".";
+  }
+};
+
+
 /* Step 36
  *
  * Define a class named "BankAccount" that has properties
@@ -769,7 +771,14 @@ Scientist.prototype.checkDiscipline = function(x) {
  *   rob
  *
  */
+function BankAccount(balance, owner){
+  this.balance = balance;
+  this.owner = owner;
+}
 
+BankAccount.prototype.withdraw = function(x) {
+  // body...
+};
 
 /* Step 37
  *
@@ -942,7 +951,10 @@ Scientist.prototype.checkDiscipline = function(x) {
  * @param {string} species The animal species
  * @param {string} gender  male or female
  */
-
+function Animal(species, gender){
+  this.species = species;
+  this.gender = gender;
+}
 
 /**
  * Step 51
@@ -951,7 +963,10 @@ Scientist.prototype.checkDiscipline = function(x) {
  * @param {string} make The vehicle's make
  * @param {string} model The vehicle's model
  */
-
+function Vehicle(make, model){
+  this.make = make;
+  this.model = model;
+}
 
 /**
  * Step 52
@@ -962,7 +977,13 @@ Scientist.prototype.checkDiscipline = function(x) {
  * value of the sides property to null.
  *
  */
+function Shape(sides){
+  this.sides = sides;
+  if(sides < 3){
+    this.sides = null;
+  }
 
+}
 
 /**
  * Step 53
@@ -971,7 +992,10 @@ Scientist.prototype.checkDiscipline = function(x) {
  * @param {anything} contents The contents of the box
  * @param {boolean} isOpen     Whether the box is opened or closed
  */
-
+function Box(contents){
+  this.contents = contents;
+  this.isOpen = true;
+}
 
 /**
  * Step 54
@@ -979,7 +1003,9 @@ Scientist.prototype.checkDiscipline = function(x) {
  * Door class
  * @param {boolean} isOpen Whether the door is opened or closed
  */
-
+function Door(isOpen){
+  this.isOpen = isOpen;
+}
 
 /**
  * Step 55
@@ -988,7 +1014,10 @@ Scientist.prototype.checkDiscipline = function(x) {
  * @param {number} size  The shoe size
  * @param {string} color The shoe color
  */
-
+function Shoe(size, color){
+  this.size = size;
+  this.color = color;
+}
 
 /**
  * Step 56
@@ -996,7 +1025,9 @@ Scientist.prototype.checkDiscipline = function(x) {
  * House class
  * @param {number} stories How many stories tall the house is
  */
-
+function House(stories){
+  this.stories = stories;
+}
 
 /**
  * Step 57
@@ -1004,7 +1035,9 @@ Scientist.prototype.checkDiscipline = function(x) {
  * Lightbulb class
  * @param {boolean} isOn Whether the light is on or off
  */
-
+function Lightbulb(isOn){
+  this.isOn = isOn;
+}
 
 /**
  * Step 58
@@ -1012,7 +1045,9 @@ Scientist.prototype.checkDiscipline = function(x) {
  * Cookie class
  * @param {string} flavor The cookie's flavor
  */
-
+function Cookie(flavor){
+  this.flavor = flavor;
+}
 
 /**
  * Step 59
@@ -1020,7 +1055,9 @@ Scientist.prototype.checkDiscipline = function(x) {
  * Meal class
  * @param {Array} foods All the foods in the meal
  */
-
+function Meal(foods){
+  this.foods = foods;
+}
 
 /**
  * Create a new instance of the Classes you defined above, below!
@@ -1029,9 +1066,11 @@ Scientist.prototype.checkDiscipline = function(x) {
 
 
 // Create 2 different species of animals
-var george;
-var nemo;
+var george = new Animal(monkey, male);
+var nemo = new Animal(fish, male);
 
+// george.prototype = Object.create(Animal.prototype);
+// nemo.prototype = Object.create(Animal.prototype);
 // Create 2 different vehicles
 var civic;
 var forte;
